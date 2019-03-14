@@ -1,6 +1,16 @@
 # AndroidScientificCalculatorUsingMxParserLibrary
 
-This is an Scientific Calculator for Android using mxParser Library .
+This is an Scientific Calculator for Android using mxParser Library which performs Math functions you can search it on internet and download and after that you need to find the jar file of library like i have a jar executable file of jdk 1.8 as i have java 8 on my pc if your pc use java 9 or java 7 so you need to use another jar file for that it will take care of all of the calculation and it will save you a lot of code and time also .
+
+For using Cos , Sin , Tan inverse functions first press the shfitkey(upward arrow) and then press the key for inverse operations and to reset the calculator to perform the normal functions using calcualtor press AC button which will reset the calculator for fresh usage . 
+
+If you found any error or defect and any solution and better way to done it please let me know 
+Contact email : ashirafzal96@gmail.com
+WhatsApp contact : +923423351437
+
+Official link for mxParser Library http://mathparser.org/
+
+mXparser on github https://github.com/mariuszgromada/MathParser.org-mXparser
 
 ## Screenshots for App
 
