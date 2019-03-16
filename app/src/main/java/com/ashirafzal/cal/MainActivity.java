@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-                    /****** Special charactors and functions buttons Coding *****/
+                    /****** Special characters and functions buttons Coding *****/
 
         btnOpenBracket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
         btnPie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeExpression("π");
+                writeExpression("Pi");
             }
         });
 
@@ -409,7 +409,7 @@ public class MainActivity extends AppCompatActivity {
         btnModulo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeExpression("#");
+                writeExpression("arsin");
             }
         });
 
