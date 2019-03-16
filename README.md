@@ -12,6 +12,10 @@ Official link for mxParser Library http://mathparser.org/
 
 mXparser on github https://github.com/mariuszgromada/MathParser.org-mXparser
 
+
+Learn how to use mxParser and unary operation like sin,cos,tan,cos inverse ,sin inverse by following the below link
+http://mathparser.org/mxparser-math-collection/unary-functions/
+
 ## Screenshots for App
 
 
