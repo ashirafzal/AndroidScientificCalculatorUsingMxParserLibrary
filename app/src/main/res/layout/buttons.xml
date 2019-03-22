@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:rowCount="10"
         android:columnCount="7"
-        android:background="#FF0000"
+        android:background="#4a1a06"
         >
 
                     <!-- Row 1 -->
@@ -72,7 +72,7 @@
 
         <Button
             android:id="@+id/btnPie"
-            android:text="π"
+            android:text="pi"
             android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="@color/NumberText"
@@ -81,11 +81,12 @@
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
             android:id="@+id/btnTg"
-            android:text="Tg"
+            android:text="tg"
             android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="@color/NumberText"
@@ -94,11 +95,12 @@
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
             android:id="@+id/btnRad"
-            android:text="rad"
+            android:text="Rad"
             android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="@color/NumberText"
@@ -107,6 +109,7 @@
             android:layout_column="2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -120,6 +123,7 @@
             android:layout_column="3"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <!-- Row 3 -->
@@ -135,6 +139,7 @@
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -148,6 +153,7 @@
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -161,6 +167,7 @@
             android:layout_column="2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -174,6 +181,7 @@
             android:layout_column="3"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <!-- Row 4 -->
@@ -189,6 +197,7 @@
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -202,6 +211,7 @@
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -215,6 +225,7 @@
             android:layout_column="2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -228,6 +239,7 @@
             android:layout_column="3"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <!-- Row 5 -->
@@ -256,6 +268,7 @@
             android:layout_column="1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
@@ -269,12 +282,13 @@
             android:layout_column="2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button
             android:id="@+id/btnShift"
-            android:text="↑"
-            android:textSize="24dp"
+            android:text="Shift"
+            android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="@color/NumberText"
             android:background="@color/NumberBG"
@@ -282,14 +296,15 @@
             android:layout_column="3"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <!-- Row 6 -->
 
         <Button
-            android:id="@+id/btnModulo"
-            android:text="arsin"
-            android:textSize="12dp"
+            android:id="@+id/btnDeg"
+            android:text="Deg"
+            android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="@color/NumberText"
             android:background="@color/NumberBG"
@@ -297,6 +312,7 @@
             android:layout_column="0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:textAllCaps="false"
             />
 
         <Button

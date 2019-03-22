@@ -6,8 +6,6 @@
 
     <color name="NumberBG">#8B0000</color>
     <color name="NumberText">#ffffff</color>
-
-
-
+    <color name="Maroon">#800000</color>
 
 </resources>

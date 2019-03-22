@@ -1,5 +1,6 @@
 package com.ashirafzal.cal;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             btnClear,btnDecimal,btnAdd,btnMinus,btnMultiply,btnDivide,btnEqual,btnPower,
             btnBack,btnDoubleZero,btnOpenBracket,btnCloseBracket,btnPie,btnTg,btnRad,btnTan,
             btnLn,btnExp,btnLog2,btnLog10,btnCsc,btnCot,btnSec,btnCosec,btnFactorial,btnSin,btnCos,
-            btnShift,btnModulo;
+            btnShift,btnDeg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btnSin = findViewById(R.id.btnSin);
         btnCos = findViewById(R.id.btnCos);
         btnShift = findViewById(R.id.btnShift);
-        btnModulo = findViewById(R.id.btnModulo);
+        btnDeg = findViewById(R.id.btnDeg);
 
                             /**** Number buttons and common operators ****/
 
@@ -84,6 +85,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clearScreen();
+
+                btnCos.setText(" cos");
+                btnSin.setText("sin");
+                btnTan.setText("tan");
+                btnCsc.setText("csc");
+                btnCot.setText("cot");
+                btnCosec.setText("cosec");
+                btnSec.setText("sec");
+                btnTg.setText("tg");
 
                 btnCos.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -144,11 +154,108 @@ public class MainActivity extends AppCompatActivity {
         btnEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String expression = tvExpression.getText().toString();
-                Expression e = new Expression(expression);
-                String result = String.valueOf(e.calculate());
 
-                tvResult.setText(result);
+                btnCos.setText(" cos");
+                btnSin.setText("sin");
+                btnTan.setText("tan");
+                btnCsc.setText("csc");
+                btnCot.setText("cot");
+                btnCosec.setText("cosec");
+                btnSec.setText("sec");
+                btnTg.setText("tg");
+
+                btnCos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("cos");
+                    }
+                });
+
+                btnSin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("sin");
+                    }
+                });
+                btnTan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("tan");
+                    }
+                });
+                btnCsc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("csc");
+                    }
+                });
+
+                btnCot.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("cot");
+                    }
+                });
+
+                btnSec.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("sec");
+                    }
+                });
+
+                btnCosec.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("cosec");
+                    }
+                });
+                btnTg.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        writeExpression("tg");
+                    }
+                });
+
+                String expression = tvExpression.getText().toString();
+
+                expression = expression.replaceAll("X","*");
+                expression = expression.replaceAll("cos-1","cosh");
+                expression = expression.replaceAll("sin-1","sinh");
+                expression = expression.replaceAll("tan-1","tanh");
+                expression = expression.replaceAll("csc-1","csch");
+                expression = expression.replaceAll("cot-1","coth");
+                expression = expression.replaceAll("cosec-1","cosech");
+                expression = expression.replaceAll("sec-1","sech");
+                expression = expression.replaceAll("tg-1","tgh");
+
+                try{
+
+                    Expression e = new Expression(expression);
+                    String result = String.valueOf(e.calculate());
+
+                    if(result.substring(result.length() - 2).equals(".0")){
+                        result = result.substring(0, result.length()-2);
+                    }
+
+                    if(result == "NaN"){
+                        tvExpression.setText("SYNTAX ERROR");
+                        tvResult.setText("");
+                    }else{
+                        tvResult.setText(result);
+                    }
+
+                    if(expression == ""){
+                        tvExpression.setText("");
+                        tvResult.setText("");
+                    }
+
+                }catch (Exception ex){
+
+                    tvExpression.setText("SYNTAX ERROR");
+                    tvResult.setText("");
+
+                }
             }
         });
 
@@ -240,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
         btnMultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeExpression("*");
+                writeExpression("X");
             }
         });
 
@@ -269,9 +376,16 @@ public class MainActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                processor = tvExpression.getText().toString();
-                processor = processor.substring(0 , processor.length()-1);
-                tvExpression.setText(processor);
+
+                try{
+
+                    processor = tvExpression.getText().toString();
+                    processor = processor.substring(0 , processor.length()-1);
+                    tvExpression.setText(processor);
+
+                }catch (Exception e){
+                    tvExpression.setText("");
+                }
             }
         });
 
@@ -406,65 +520,75 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnModulo.setOnClickListener(new View.OnClickListener() {
+        btnDeg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeExpression("arsin");
+                writeExpression("deg");
             }
         });
 
         btnShift.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  btnCos.setOnClickListener(new View.OnClickListener() {
+
+                 btnCos.setText(" cos-1");
+                 btnSin.setText("sin-1");
+                 btnTan.setText("tan-1");
+                 btnCsc.setText("csc-1");
+                 btnCot.setText("cot-1");
+                 btnCosec.setText("cosec-1");
+                 btnSec.setText("sec-1");
+                 btnTg.setText("tg-1");
+
+                 btnCos.setOnClickListener(new View.OnClickListener() {
                       @Override
                       public void onClick(View v) {
-                          writeExpression("acos");
+                          writeExpression("cos-1");
                       }
                   });
                 btnSin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("asin");
+                        writeExpression("sin-1");
                     }
                 });
                 btnTan.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("atan");
+                        writeExpression("tan-1");
                     }
                 });
                 btnCsc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("acsc");
+                        writeExpression("csc-1");
                     }
                 });
 
                 btnCot.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("acot");
+                        writeExpression("cot-1");
                     }
                 });
 
                 btnSec.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("asec");
+                        writeExpression("sec-1");
                     }
                 });
 
                 btnCosec.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("acosec");
+                        writeExpression("cosec-1");
                     }
                 });
                 btnTg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        writeExpression("atg");
+                        writeExpression("tg-1");
                     }
                 });
             }
